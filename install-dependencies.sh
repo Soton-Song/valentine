@@ -9,8 +9,11 @@ sudo apt install openjdk-8-jdk gcc g++ make parallel maven subversion patch dock
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/ && \
 export PATH=$PATH:${JAVA_HOME} && \
 
-sudo systemctl start docker && \
-sudo systemctl enable docker && \
+#sudo systemctl start docker && \
+#sudo systemctl enable docker && \
+
+sudo service docker start && \
+sudo chkconfig docker on  && \
 
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
 sudo bash ~/miniconda.sh -u -b -p $HOME/miniconda && \
